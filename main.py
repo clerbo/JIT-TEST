@@ -5,7 +5,8 @@ URL = "https://pokeapi.co/api/v2/ability/"
 
 def trace(*args):
   #for debug output
-  print(*args) #comment this line out later to remove debug output
+  print(*args)
+  #print (f"Here is an ability: {data['1']}") 
   pass
 
 trace("Calling", URL)
