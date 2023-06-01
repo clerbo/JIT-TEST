@@ -10,7 +10,7 @@ def trace(*args):
 
 trace("Calling", URL)
 response = requests.get(URL)
-response.raise_for_students()
+response.raise_for_status()
 data = response.json()
 
 trace("\nHere are all the kay/value pairs in the JSON response:")
