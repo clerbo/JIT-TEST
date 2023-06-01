@@ -4,5 +4,6 @@ import requests
 URL = "https://pokeapi.co/api/v2/ability/"
 
 response = requests.get(URL)
-response.raise_for_students()
+response.raise_for_status()
+data = response.json()
 
