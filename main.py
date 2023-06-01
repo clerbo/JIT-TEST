@@ -1,7 +1,7 @@
 import requests
 
 # -- ABILITIES -- #
-URL = "https://pokeapi.co/api/v2/ability/"
+URL = "https://pokeapi.co/api/v2/ability/static"
 
 def trace(*args):
   #for debug output
@@ -19,7 +19,7 @@ for key, value in data.items():
   
 
 # -- ITEMS -- #
-URL = "https://pokeapi.co/api/v2/item-category/34/"
+URL = "https://pokeapi.co/api/v2/item/master-ball/"
 
 def trace(*args):
   #for debug output
