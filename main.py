@@ -1,4 +1,10 @@
 import requests
+import pypokedex
+import pillow
+import urllib3
+import PIL.image, PIL.imageTk
+import tkinter as tk
+from io import BytesIo
 
 # -- DESCRIPTION/POKEDEX -- #
 URL = "https://pokeapi.co/api/v2/pokemon/pikachu"
