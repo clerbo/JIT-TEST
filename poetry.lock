@@ -302,6 +302,18 @@ build_docs = ["sphinx (>=1.6)", "sphinxcontrib-fulltoc (>=1.2.0)", "cloud-spthem
 totp = ["cryptography"]
 
 [[package]]
+name = "pillow"
+version = "9.5.0"
+description = "Python Imaging Library (Fork)"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-inline-tabs", "sphinx-removed-in", "sphinxext-opengraph"]
+tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
+
+[[package]]
 name = "platformdirs"
 version = "2.6.2"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
@@ -591,7 +603,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0,<3.11"
-content-hash = "25cc5870a6b5e516ed95a212a6b451f2c37afde98152f36f6ab0267e395c22ce"
+content-hash = "47c6958d7c41a1d16fa8ab8f90ae52a436aa07e3bc258ecd53e11b9e8328e42b"
 
 [metadata.files]
 aiohttp = []
@@ -620,6 +632,7 @@ numpy = []
 packaging = []
 parso = []
 passlib = []
+pillow = []
 platformdirs = []
 pluggy = []
 protobuf = []

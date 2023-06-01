@@ -1,16 +1,20 @@
 import requests
 import pypokedex
-import pillow
 import urllib3
-import PIL.image, PIL.imageTk
 import tkinter as tk
-from io import BytesIo
+import PIL.image
+from io import BytesIO 
 
 # -- DESCRIPTION/POKEDEX -- #
-URL = "https://pokeapi.co/api/v2/pokemon/pikachu"
+
+name = input("What Pokemon would you like to know more about?")
+pokemon = pypokedex.get(name) 
+print(pokemon.dex)
+print(pokemon.name)
+print(pokemon.types)
 
 def trace(*args):
-  #for debug output
+  for debug output
   print(*args)
   pass
 
@@ -27,7 +31,7 @@ for key, value in data.items():
 URL = "https://pokeapi.co/api/v2/ability/static"
 
 def trace(*args):
-  #for debug output
+  for debug output
   print(*args)
   pass
 
@@ -45,8 +49,8 @@ for key, value in data.items():
 URL = "https://pokeapi.co/api/v2/item/master-ball/"
 
 def trace(*args):
-  #for debug output
-  #print(*args) #comment this line out later to remove debug output
+  for debug output
+  print(*args) #comment this line out later to remove debug output
   pass
 
 trace("Calling", URL)
