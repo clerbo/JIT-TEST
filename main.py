@@ -19,7 +19,7 @@ def trace(*args):
     pass
     
 URL = "https://pokeapi.co/api/v2/pokemon/{id or name}/"
-trace("Calling", URL)
+#trace("Calling", URL)
 response = requests.get(URL)
 response.raise_for_status()
 data = response.json()
@@ -36,7 +36,7 @@ def trace(*args):
     print(*args)
     pass
 
-trace("Calling", URL)
+#trace("Calling", URL)
 response = requests.get(URL)
 response.raise_for_status()
 data = response.json()
@@ -49,8 +49,8 @@ for entry in effect_changes:
       print (item["effect"])
 
 trace("\nHere are all the key/value pairs in the JSON response:")
-for key, value in data.items():
-  trace (key, ": ", value)
+#for key, value in data.items():
+  #trace (key, ": ", value)
   
 
 # -- ITEMS -- #
@@ -61,11 +61,11 @@ def trace(*args):
     print(*args) #comment this line out later to remove debug output
     pass
 
-trace("Calling", URL)
+#trace("Calling", URL)
 response = requests.get(URL)
 response.raise_for_status()
 data = response.json()
 
 trace("\nHere are all the kay/value pairs in the JSON response:")
-for key, value in data.items():
-  trace (key, ": ", value)
+#for key, value in data.items():
+  #trace (key, ": ", value)
