@@ -40,6 +40,13 @@ response = requests.get(URL)
 response.raise_for_status()
 data = response.json()
 
+effect_changes = data["effect_changes"]
+for entry in effect_changes:
+  print ()
+  for item in entry["effect_entries"]:
+    if item["language"]["name"] == "en":
+      print (item["effect"])
+
 trace("\nHere are all the key/value pairs in the JSON response:")
 for key, value in data.items():
   trace (key, ": ", value)
