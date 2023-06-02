@@ -2,21 +2,21 @@ import requests
 import pypokedex
 import urllib3
 import tkinter as tk
-import PIL.image
 from io import BytesIO 
 
 # -- DESCRIPTION/POKEDEX -- #
 
-name = input("What Pokemon would you like to know more about?")
-pokemon = pypokedex.get(name) 
-print(pokemon.dex)
-print(pokemon.name)
-print(pokemon.types)
+n = input("What Pokemon would you like to know more about?")
+pokemon = pypokedex.get(name = str(n)) 
+print("The Pokedex number for this Pokemon is " + str(pokemon.dex) + ".")
+print("These are the types that this Pokemon is: " + str(pokemon.types))
+print("This Pokemon weighs " + str(pokemon.weight) + " pounds.")
+
 
 def trace(*args):
-  for debug output
-  print(*args)
-  pass
+  for debug in output:
+    print(*args)
+    pass
 
 trace("Calling", URL)
 response = requests.get(URL)
@@ -31,9 +31,9 @@ for key, value in data.items():
 URL = "https://pokeapi.co/api/v2/ability/static"
 
 def trace(*args):
-  for debug output
-  print(*args)
-  pass
+  for debug in output:
+    print(*args)
+    pass
 
 trace("Calling", URL)
 response = requests.get(URL)
@@ -49,9 +49,9 @@ for key, value in data.items():
 URL = "https://pokeapi.co/api/v2/item/master-ball/"
 
 def trace(*args):
-  for debug output
-  print(*args) #comment this line out later to remove debug output
-  pass
+  for debug in output:
+    print(*args) #comment this line out later to remove debug output
+    pass
 
 trace("Calling", URL)
 response = requests.get(URL)
