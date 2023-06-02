@@ -52,7 +52,7 @@ trace("\nHere are all the key/value pairs in the JSON response:")
 #for key, value in data.items():
   #trace (key, ": ", value)
   
-
+"""
 # -- ITEMS -- #
 URL = "https://pokeapi.co/api/v2/item/master-ball/"
 
@@ -69,3 +69,4 @@ data = response.json()
 trace("\nHere are all the kay/value pairs in the JSON response:")
 #for key, value in data.items():
   #trace (key, ": ", value)
+"""
