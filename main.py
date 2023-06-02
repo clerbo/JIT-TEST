@@ -20,20 +20,37 @@ def trace(*args):
 print()
 
 # -- ABILITIES -- #
-URL = "https://pokeapi.co/api/v2/ability/{id or name}/"
-
 def trace(*args):
   for debug in output:
     print(*args)
     pass
+
+print("These are the abilities the Pokemon has: " + str(pokemon.abilities))
+print("Here is a description of the abilities: ")
+
 """
+URL = 'https://pokeapi.co/api/v2/ability/'
+for ability in abilities:
+  print (item['name'])
+
+import http.client
+
+conn = http.client.HTTPConnection("pokeapi.co")
+
+payload = "{}"
+
+conn.request("GET", "/api/v2/ability/%7Bparam1%7D/", payload)
+
+res = conn.getresponse()
+data = res.read()
+      
+print(data.decode("utf-8"))
+
+
 trace("Calling", URL)
 response = requests.get(URL)
 response.raise_for_status()
 data = response.json()
-"""
-
-ability = input("Which ability do you want to learn more about? Static, insomnia, speed-boost, immunity, or shield-dust: ")
 
 effect_changes = data["effect_changes"]
 ability = effect_changes.get(name = str(ability))
@@ -42,10 +59,7 @@ for entry in effect_changes:
   for item in entry["effect_entries"]:
     if item["language"]["name"] == "en":
       print (item["effect"])
-
-trace("\nHere are all the key/value pairs in the JSON response:")
-#for key, value in data.items():
-  #trace (key, ": ", value)
+"""
   
 """
 # -- ITEMS -- #
