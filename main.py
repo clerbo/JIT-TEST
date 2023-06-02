@@ -29,17 +29,20 @@ for key, value in data.items():
   trace (key, ": ", value)
 
 # -- ABILITIES -- #
-URL = "https://pokeapi.co/api/v2/ability/static"
+URL = "https://pokeapi.co/api/v2/ability/{id or name}/"
 
 def trace(*args):
   for debug in output:
     print(*args)
     pass
 
-#trace("Calling", URL)
+trace("Calling", URL)
 response = requests.get(URL)
 response.raise_for_status()
 data = response.json()
+
+ability = input("Which ability do you want to learn more about? Static, insomnia, speed-boost, immunity, or shield-dust: ")
+ability = effect_entries.get(name = str(ability))
 
 effect_changes = data["effect_changes"]
 for entry in effect_changes:
