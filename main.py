@@ -6,7 +6,7 @@ from io import BytesIO
 
 # -- DESCRIPTION/POKEDEX -- #
 
-n = input("What Pokemon would you like to know more about?")
+n = input("What Pokemon would you like to know more about? ")
 pokemon = pypokedex.get(name = str(n)) 
 print("The Pokedex number for this Pokemon is " + str(pokemon.dex) + ".")
 print("These are the types that this Pokemon is: " + str(pokemon.types))
@@ -17,6 +17,7 @@ def trace(*args):
   for debug in output:
     print(*args)
     pass
+print()
 
 # -- ABILITIES -- #
 URL = "https://pokeapi.co/api/v2/ability/{id or name}/"
@@ -25,16 +26,17 @@ def trace(*args):
   for debug in output:
     print(*args)
     pass
-
+"""
 trace("Calling", URL)
 response = requests.get(URL)
 response.raise_for_status()
 data = response.json()
+"""
 
 ability = input("Which ability do you want to learn more about? Static, insomnia, speed-boost, immunity, or shield-dust: ")
-ability = effect_entries.get(name = str(ability))
 
 effect_changes = data["effect_changes"]
+ability = effect_changes.get(name = str(ability))
 for entry in effect_changes:
   print ()
   for item in entry["effect_entries"]:
