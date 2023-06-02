@@ -17,7 +17,8 @@ def trace(*args):
   for debug in output:
     print(*args)
     pass
-
+    
+URL = "https://pokeapi.co/api/v2/pokemon/{id or name}/"
 trace("Calling", URL)
 response = requests.get(URL)
 response.raise_for_status()
@@ -28,7 +29,7 @@ for key, value in data.items():
   trace (key, ": ", value)
 
 # -- ABILITIES -- #
-URL = https://pokeapi.co/api/v2/ability/static
+URL = "https://pokeapi.co/api/v2/ability/static"
 
 def trace(*args):
   for debug in output:
@@ -53,7 +54,7 @@ for key, value in data.items():
   
 
 # -- ITEMS -- #
-URL = https://pokeapi.co/api/v2/item/master-ball/
+URL = "https://pokeapi.co/api/v2/item/master-ball/"
 
 def trace(*args):
   for debug in output:
