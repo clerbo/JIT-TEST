@@ -12,50 +12,31 @@ print("The Pokedex number for this Pokemon is " + str(pokemon.dex) + ".")
 print("These are the types that this Pokemon is: " + str(pokemon.types))
 print("This Pokemon weighs " + str(pokemon.weight) + " pounds.")
 
-
-def trace(*args):
-  for debug in output:
-    print(*args)
-    pass
 print()
 
 # -- ABILITIES -- #
-def trace(*args):
-  for debug in output:
-    print(*args)
-    pass
-
 print("These are the abilities the Pokemon has: " + str(pokemon.abilities))
 
-"""
-URL = 'https://pokeapi.co/api/v2/ability/'
-for ability in abilities:
-  print (item['name'])
+def trace(*args):
+  #print(*args)
+  pass
 
-import http.client
+# -- ITEMS -- #
+print()
+URL = 'https://pokeapi.co/api/v2/item/master-ball/'
 
-conn = http.client.HTTPConnection("pokeapi.co")
+print("There are two different types of pokeballs you can use to capture " + str(n) + "!")
+ball = input("One pokeball is the master ball, and another pokeball is the ___. Type one to learn more about them: ")
 
-payload = "{}"
+if ball == "master ball":
+  trace("Calling", URL)
+  response = requests.get(URL)
+  response.raise_for_status()
+  data = response.json()
+  trace("\nText Returned:", response.text)
 
-conn.request("GET", "/api/v2/ability/%7Bparam1%7D/", payload)
+  item = requests.get(URL)
+  data = item.json()
+  for effect in data["effect_entries"]:
+    print(effect['effect'])
 
-res = conn.getresponse()
-data = res.read()
-      
-print(data.decode("utf-8"))
-
-
-trace("Calling", URL)
-response = requests.get(URL)
-response.raise_for_status()
-data = response.json()
-
-effect_changes = data["effect_changes"]
-ability = effect_changes.get(name = str(ability))
-for entry in effect_changes:
-  print ()
-  for item in entry["effect_entries"]:
-    if item["language"]["name"] == "en":
-      print (item["effect"])
-"""
