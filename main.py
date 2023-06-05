@@ -3,6 +3,7 @@ import pypokedex
 import urllib3
 import tkinter as tk
 from io import BytesIO 
+import random
 
 # -- DESCRIPTION/POKEDEX -- #
 
@@ -18,7 +19,6 @@ print()
 print("These are the abilities the Pokemon has: " + str(pokemon.abilities))
 
 def trace(*args):
-  #print(*args)
   pass
 
 # -- ITEMS -- #
@@ -26,17 +26,55 @@ print()
 URL = 'https://pokeapi.co/api/v2/item/master-ball/'
 
 print("There are two different types of pokeballs you can use to capture " + str(n) + "!")
-ball = input("One pokeball is the master ball, and another pokeball is the ___. Type one to learn more about them: ")
 
-if ball == "master ball":
-  trace("Calling", URL)
-  response = requests.get(URL)
-  response.raise_for_status()
-  data = response.json()
-  trace("\nText Returned:", response.text)
+while True:
+  ball = input("One pokeball is the master ball, and another pokeball is the quick ball. Type one to learn more about it, or type 'next' to continue: ")
+  print()
+  if ball == "master ball":
+    trace("Calling", URL)
+    response = requests.get(URL)
+    response.raise_for_status()
+    data = response.json()
+    trace("\nText Returned:", response.text)
+    
+    item = requests.get(URL)
+    data = item.json()
+    for effect in data["effect_entries"]:
+      print(effect['effect'])
+      print()
+    continue
+  
+  elif ball == "quick ball":
+    URL = 'https://pokeapi.co/api/v2/item/quick-ball/'
+    trace("Calling", URL)
+    response = requests.get(URL)
+    response.raise_for_status()
+    data = response.json()
+    trace("\nText Returned:", response.text)
+    
+    item = requests.get(URL)
+    data = item.json()
+    for effect in data["effect_entries"]:
+      print(effect['effect'])
+      print()
+    continue
 
-  item = requests.get(URL)
-  data = item.json()
-  for effect in data["effect_entries"]:
-    print(effect['effect'])
+  elif ball == "next":
+    break
+  
+  else:
+    print("Ooops! Try again.")
+    break
+  
 
+print()
+print("Let's see if you can catch your Pokemon with the ball you chose!")
+type = input("Choose which ball you want to use to catch your Pokemon: ")
+print()
+if type == "master ball":
+  list2 = ['Yes', 'No']
+  result = random.choice(list2)
+  if result == "Yes":
+    print("You caught the Pokemon! Congratulations!")
+  if result == "No":
+    print("Sorry, you didn't catch the Pokemon.")
