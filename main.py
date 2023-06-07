@@ -72,14 +72,14 @@ print("Let's see if you can catch your Pokemon with the ball you chose!")
 type = input("Choose which ball you want to use to catch your Pokemon: ")
 print()
 if type == "master ball":
-  list2 = ['Yes', 'No']
+  list2 = ['Yes','Yes', 'No']
   result = random.choice(list2)
   if result == "Yes":
     print("You caught the Pokemon! Congratulations!")
   if result == "No":
     print("Sorry, you didn't catch the Pokemon.")
 if type == "quick ball":
-  list2 = ['Yes', 'No']
+  list2 = ['Yes', 'No', 'No']
   result = random.choice(list2)
   if result == "Yes":
     print("You caught the Pokemon! Congratulations!")
