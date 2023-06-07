@@ -78,3 +78,11 @@ if type == "master ball":
     print("You caught the Pokemon! Congratulations!")
   if result == "No":
     print("Sorry, you didn't catch the Pokemon.")
+if type == "quick ball":
+  list2 = ['Yes', 'No']
+  result = random.choice(list2)
+  if result == "Yes":
+    print("You caught the Pokemon! Congratulations!")
+  if result == "No":
+    print("Sorry, you didn't catch the Pokemon.")
+print()
